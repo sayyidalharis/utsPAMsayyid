@@ -1,20 +1,76 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { View, Text, TouchableOpacity } from 'react-native';
+import HomePage from './resources/pages/HomePage'
+import ResultPage from './resources/pages/ResultPage'
+import HomePageD from './resources/pages/HomePageD'
+import Beranda from './resources/pages/Beranda'
+import PesananSaya from './resources/pages/PesananSaya'
+import Pembatalan from './resources/pages/Pembatalan'
+import Lainnya from './resources/pages/Lainnya'
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export default function App() {
+
+const Tab = createBottomTabNavigator();
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Tab.Navigator
+      initialRouteName="Beranda"
+      screenOptions={{
+        tabBarActiveTintColor: '#00579C',
+      }}
+      >
+      <Tab.Screen
+        name="Beranda"
+        component={Beranda}
+        options={{
+          headerShown: false,
+          tabBarLabel: 'Beranda',
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome name="home" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="PesananSaya"
+        component={PesananSaya}
+        options={{
+          headerShown: false,
+          tabBarLabel: 'Pesanan',
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome name="leanpub" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Pembatalan"
+        component={Pembatalan}
+        options={{
+          headerShown: false,
+          tabBarLabel: 'Pembatalan',
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome name="window-close" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Lainnya"
+        component={Lainnya}
+        options={{
+          headerShown: false,
+          tabBarLabel: 'Lainnya',
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome name="th-list" color={color} size={size} />
+          ),
+        }}
+      />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;

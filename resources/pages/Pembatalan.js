@@ -9,7 +9,7 @@ const Pembatalan = ({navigation}) =>{
         <StatusBar style="auto" />
               <Pressable 
                   style={styles.button}
-                  onPress={() => navigation.navigate('HomePageD', { screen: 'PageBaru' })}
+                  onPress={() => navigation.navigate('Beranda')}
               >
                   <Text style={styles.textButton}>adasdas</Text>
               </Pressable>

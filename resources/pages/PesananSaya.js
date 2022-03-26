@@ -1,33 +1,18 @@
-import React from 'react'
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Text} from 'react-native'
+import React from 'react';
+import PesananSayaLand from './pesanan/PesananSayaLand'
+import PesananSayaDetail from './pesanan/PesananSayaDetail'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const BerandaLand = ({navigation}) =>{
-    return (
-        <View style={styles.container}>
-        <Text>pesanan saya {"\n"}Saying hi!!!!</Text>
-        <StatusBar style="auto" />
-        </View>
-      )
+const Stack = createNativeStackNavigator();
+
+function PesananSaya() {
+  return (
+      <Stack.Navigator initialRouteName='PesananSayaLand' screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="PesananSayaLand" component={PesananSayaLand}/>
+        <Stack.Screen name="PesananSayaDetail" component={PesananSayaDetail}/>
+      </Stack.Navigator>
+  );
 }
 
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-  button:{
-      flex: 0,
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#ed7c31',
-      borderRadius: 20,
-      marginTop: 4,
-  },
-});
-
-export default BerandaLand
+export default PesananSaya;
 

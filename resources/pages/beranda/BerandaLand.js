@@ -28,6 +28,7 @@ const BerandaLand = ({navigation}) =>{
             <Picker.Item label="Kalimanatan" value="Kalimantan" />
             <Picker.Item label="Sulawesi" value="Sulawesi" />
             <Picker.Item label="Bali" value="Bali" />
+            <Picker.Item label="Papua" value="Papua" />
         </Picker>
 
         <Text>Pelabuhan Tujuan</Text>
@@ -42,6 +43,7 @@ const BerandaLand = ({navigation}) =>{
             <Picker.Item label="Kalimanatan" value="Kalimantan" />
             <Picker.Item label="Sulawesi" value="Sulawesi" />
             <Picker.Item label="Bali" value="Bali" />
+            <Picker.Item label="Papua" value="Papua" />
         </Picker>
 
         <Text>Kelas Layanan</Text>

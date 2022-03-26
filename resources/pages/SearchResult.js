@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image } from "react-native"
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { Maskapai, Jadwal, Bandara } from '../db/data'
+import { Maskapai, Jadwal, Bandara } from '../db/datakapal'
 
 const SearchResult = ({data}) => {
     let available = true

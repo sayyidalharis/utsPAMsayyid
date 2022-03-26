@@ -1,33 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Text, TouchableOpacity, Picker, Pressable} from 'react-native'
+import { StyleSheet, View, Text, TextInput, TouchableOpacity, Picker, Pressable} from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { Jadwals } from './data.js'
-// import DataQuery from './DataQuery'
 
-const RincianTiket = ({route, navigation}) =>{
+const TampilanPemesanan = ({route, navigation}) =>{
     const { data } = route.params;
     console.log(data)
-
-    const listJadwal = () => {
-
-        let newJadwal = Jadwals.filter( (x) => {
-           return (x.awal == data.awal && 
-           x.tujuan == data.tujuan&& 
-           x.layanan == data.layanan)
-        })
-
-        return newJadwal[0]
-    }
-
-    const a = listJadwal()
-
-    data['jadwal_id'] = a.jadwal_id
-    data['harga'] = a.harga
-    data['status'] = "Booked"
-
-    console.log(data)
-
     return (
         <View style={styles.container}>
         <Ionicons
@@ -36,24 +14,26 @@ const RincianTiket = ({route, navigation}) =>{
             color={'#00579C'}
             onPress={() => navigation.goBack()}
         />
-        <Text>Rincian Tiket!! {"\n"}Dari : {data.awal} ke </Text>
+        <Text>Rincian Pemesanan!! {"\n"}Dari : {data.awal} ke </Text>
         <Text>Ke : {data.tujuan}{"\n"}Kelas : {data.layanan}</Text>
         <Text>Tanggal : {data.tanggal}{"\n"}Jam : {data.jam}</Text>
         <StatusBar style="auto" />
         <Pressable 
             style={styles.button}
-            onPress={() => navigation.navigate('InformasiPemesanan', { data: data })}
+            onPress={() => navigation.navigate('PesananSaya', {
+                screen: 'PesananSayaLand',
+                params: { data:data },
+              })}
         >
             <Text style={styles.textButton}>adasdas</Text>
         </Pressable>
-        {/* <DataQuery navigation={navigation} data = {data}/> */}
         </View>
       )
 }
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#ffff',
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -79,5 +59,6 @@ const styles = StyleSheet.create({
         color: '#fff',
     },
 });
-export default RincianTiket
+
+export default TampilanPemesanan
 

@@ -15,53 +15,116 @@ const PesananSayaLand = ({route, navigation}) =>{
                 color={'#00579C'}
                 onPress={() => navigation.goBack()}
             />
-            <Text>PESANAN SAYA LANDDDD!! {"\n"}Dari : {data.awal} ke </Text>
-            <Text>Ke : {data.tujuan}{"\n"}Kelas : {data.layanan}</Text>
-            <Text>Tanggal : {data.tanggal}{"\n"}Jam : {data.jam}</Text>
-            <StatusBar style="auto" />
-            <Pressable 
-                style={styles.button}
-                onPress={() => console.log(data)}
-            >
-                <Text style={styles.textButton}>adasdas</Text>
-            </Pressable>
+            <View>
+                <Text style={styles.title}>
+                    Informasi  Pemesanan
+                 </Text>
+            </View>
+            <View style={styles.box}>
+                <Text style={styles.text2}>Dari  : {data.awal}</Text>
+                <Text style={styles.text2}>Ke    : {data.tujuan}</Text>
+                <Text >{"\n"}Kelas     : {data.layanan}</Text>
+                <Text style={{marginBottom:13}}>Tanggal : {data.tanggal}{"\n"}Jam       : {data.jam} {"\n"}</Text>
+                
+                <Pressable 
+                    style={styles.button}
+                    onPress={() => navigation.navigate('Pembatalan', { data: data })}
+                >
+                    <Text style={{color: '#fff'}}> Details </Text>
+                </Pressable>
+            </View>
             </View>
           )
     }
     else{
         return(
-            <Text>PEsanan saya gengss</Text>
+            <Text>Pesanan saya gengss</Text>
         )
     }
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#ffff',
-      alignItems: 'center',
-      justifyContent: 'center',
+    title:{
+        textAlign: 'center',
+        fontSize: 23,
+        fontWeight: 'bold',
+        color: '#00579C',
+        marginTop: '8%',
+        margin: '11%'
+    },
+    container:{
+        backgroundColor: '#fff',
+        borderRadius: 5,
+        padding: 10,
+        width: '90%',
+        left: '5%',
+        shadowColor: '#000',
+        elevation: 5,
+        marginTop: '20%',
+        marginBottom: '10%'
+    },
+    box:{
+        backgroundColor: '#F0F0F0',
+        width: '92%',
+        left: '4%',
+        borderRadius: 5,
+        padding: 10,
+        marginTop: '2%',
+        marginBottom: '7%',
+    },
+    label:{
+        marginTop: 10,
+    },
+    field:{
+        flex: 0,
+        flexDirection: 'row',
+        alignItems: 'center',
+        borderWidth: 2,
+        borderColor: '#00579C',
+        borderRadius: 15,
+        marginTop: 10,
+        marginBottom: 10,
+        padding: 5,
+    },
+    text:{
+        fontSize: 16,
+        marginLeft: '7%',
+        fontWeight: 'bold'
+    },
+    text2:{
+        fontSize: 16,
+        fontWeight: 'bold'
+    },
+    input:{
+        padding:10,
+        backgroundColor: '#fff',
+        color: '#424242',
     },
     button:{
-        flex: 0,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#ed7c31',
         borderRadius: 20,
-        marginTop: 4,
-    },
-    menuIcon: {
-        marginTop: 45,
-        fontSize: 40,
-        marginLeft:20,
-        
+        marginTop: 10,
+        marginBottom: '3%',
+        marginRight: '5%',
+        height: '13%'
     },
     textButton:{
         fontWeight: 'bold',
-        fontSize: 20,
+        fontSize: 16,
         padding: 10,
         color: '#fff',
+    },
+    menuIcon: {
+        fontSize: 30,
+        marginLeft: 10,
+        
+    },
+    wrapper:{
+        flexDirection: 'row',
+        justifyContent: 'center',
     },
 });
 

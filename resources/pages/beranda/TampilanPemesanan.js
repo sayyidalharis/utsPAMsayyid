@@ -14,7 +14,7 @@ const TampilanPemesanan = ({route, navigation}) =>{
             color={'#00579C'}
             onPress={() => navigation.goBack()}
         />
-        <Text>Rincian Pemesanan!! {"\n"}Dari : {data.awal} ke </Text>
+        <Text>Rincian Pemesanan!! {data.nama} {"\n"}Dari : {data.awal} ke </Text>
         <Text>Ke : {data.tujuan}{"\n"}Kelas : {data.layanan}</Text>
         <Text>Tanggal : {data.tanggal}{"\n"}Jam : {data.jam}</Text>
         <StatusBar style="auto" />

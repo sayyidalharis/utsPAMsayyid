@@ -1,26 +1,48 @@
 import React from 'react'
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Text, TouchableOpacity, Picker, Pressable} from 'react-native'
+import { StyleSheet, View, Text, TextInput, TouchableOpacity, Picker, Pressable} from 'react-native'
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const Pembatalan = ({navigation}) =>{
-    return (
-        <View style={styles.container}>
-        <Text>BATALLLLLLLz!! {"\n"}Saying hi!!!!</Text>
-        <StatusBar style="auto" />
-              <Pressable 
-                  style={styles.button}
-                  onPress={() => navigation.navigate('Beranda')}
-              >
-                  <Text style={styles.textButton}>adasdas</Text>
-              </Pressable>
-        </View>
-      )
+const Pembatalan = ({route, navigation}) =>{
+    if(route.params){
+        const { data } = route.params;
+        data.status = "Cancelled"
+        console.log(data)
+        return (
+            <View style={styles.container}>
+            <Ionicons
+                style={styles.menuIcon}
+                name="arrow-back"
+                color={'#00579C'}
+                onPress={() => navigation.goBack()}
+            />
+            <Text>PEMBATALAN LANDDD!! {"\n"}Dari : {data.awal} ke </Text>
+            <Text>Ke : {data.tujuan}{"\n"}Kelas : {data.layanan}</Text>
+            <Text>Tanggal : {data.tanggal}{"\n"}Jam : {data.jam}</Text>
+            <Text>Status : {data.status}</Text>
+            <StatusBar style="auto" />
+            <Pressable 
+                style={styles.button}
+                onPress={() => navigation.navigate('PesananSaya', {
+                    screen: 'PesananSayaLand'
+                  })}
+            >
+                <Text style={styles.textButton}>adasdas</Text>
+            </Pressable>
+            </View>
+          )
+    }
+    else{
+        return(
+            <Text>PEsanan saya gengss</Text>
+        )
+    }
 }
 
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#ffff',
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -32,6 +54,12 @@ const styles = StyleSheet.create({
         backgroundColor: '#ed7c31',
         borderRadius: 20,
         marginTop: 4,
+    },
+    menuIcon: {
+        marginTop: 45,
+        fontSize: 40,
+        marginLeft:20,
+        
     },
     textButton:{
         fontWeight: 'bold',

@@ -1,6 +1,6 @@
 import React from 'react'
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Text, TouchableOpacity, Picker, Pressable} from 'react-native'
+import { StyleSheet, View, Text, ScrollView, Picker, Pressable} from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Jadwals } from './data.js'
 // import DataQuery from './DataQuery'
@@ -24,38 +24,95 @@ const RincianTiket = ({route, navigation}) =>{
 
     data['jadwal_id'] = a.jadwal_id
     data['harga'] = a.harga
-    data['status'] = "Booked"
 
     console.log(data)
 
     return (
         <View style={styles.container}>
-        <Ionicons
-            style={styles.menuIcon}
-            name="arrow-back"
-            color={'#00579C'}
-            onPress={() => navigation.goBack()}
-        />
-        <Text>Rincian Tiket!! {"\n"}Dari : {data.awal} ke </Text>
-        <Text>Ke : {data.tujuan}{"\n"}Kelas : {data.layanan}</Text>
-        <Text>Tanggal : {data.tanggal}{"\n"}Jam : {data.jam}</Text>
-        <StatusBar style="auto" />
-        <Pressable 
-            style={styles.button}
-            onPress={() => navigation.navigate('InformasiPemesanan', { data: data })}
-        >
-            <Text style={styles.textButton}>adasdas</Text>
-        </Pressable>
-        {/* <DataQuery navigation={navigation} data = {data}/> */}
+        <ScrollView>
+            <Ionicons
+                style={styles.menuIcon}
+                name="arrow-back"
+                color={'#00579C'}
+                onPress={() => navigation.goBack()}
+            />
+            <View>
+                <Text style={styles.title}>
+                    Kapalzy
+                 </Text>
+            </View>
+            <Text style={styles.text}>{"\n"}Rincian Tiket!! {"\n"}Kuota tersedia : 10000 </Text>
+            <View style={styles.box}>
+                <Text style={styles.text2}>Dari  : {data.awal}</Text>
+                <Text style={styles.text2}>Ke    : {data.tujuan}</Text>
+                <Text >{"\n"}Kelas     : {data.layanan}</Text>
+                <Text style={{marginBottom:13}}>Tanggal : {data.tanggal}{"\n"}Jam       : {data.jam}</Text>
+            </View>
+            <Pressable 
+                    style={styles.button}
+                    onPress={() => navigation.navigate('InformasiPemesanan', { data: data })}
+                >
+                <Text style={styles.textButton}>adasdas</Text>
+            </Pressable>
+        </ScrollView>
         </View>
       )
 }
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
+    title:{
+        textAlign: 'center',
+        fontSize: 45,
+        fontWeight: 'bold',
+        color: '#00579C',
+        marginBottom: 7
+    },
+    container:{
+        backgroundColor: '#fff',
+        borderRadius: 5,
+        padding: 10,
+        width: '90%',
+        left: '5%',
+        shadowColor: '#000',
+        elevation: 5,
+        marginTop: '20%',
+        marginBottom: '10%'
+    },
+    box:{
+        backgroundColor: '#F0F0F0',
+        width: '80%',
+        left: '10%',
+        borderRadius: 5,
+        padding: 10,
+        marginTop: '7%',
+        marginBottom: '7%',
+    },
+    label:{
+        marginTop: 10,
+    },
+    field:{
+        flex: 0,
+        flexDirection: 'row',
+        alignItems: 'center',
+        borderWidth: 2,
+        borderColor: '#00579C',
+        borderRadius: 15,
+        marginTop: 10,
+        marginBottom: 10,
+        padding: 5,
+    },
+    text:{
+        fontSize: 16,
+        marginLeft: '7%',
+        fontWeight: 'bold'
+    },
+    text2:{
+        fontSize: 16,
+        fontWeight: 'bold'
+    },
+    input:{
+        padding:10,
+        backgroundColor: '#fff',
+        color: '#424242',
     },
     button:{
         flex: 0,
@@ -64,19 +121,19 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#ed7c31',
         borderRadius: 20,
-        marginTop: 4,
-    },
-    menuIcon: {
-        marginTop: 45,
-        fontSize: 40,
-        marginLeft:20,
-        
+        marginTop: 10,
+        marginBottom: 10,
     },
     textButton:{
         fontWeight: 'bold',
         fontSize: 20,
         padding: 10,
         color: '#fff',
+    },
+    menuIcon: {
+        fontSize: 30,
+        marginLeft:20,
+        
     },
 });
 export default RincianTiket

@@ -24,11 +24,19 @@ const PesananSayaLand = ({route, navigation}) =>{
                 <Text style={styles.text2}>Dari  : {data.awal}</Text>
                 <Text style={styles.text2}>Ke    : {data.tujuan}</Text>
                 <Text >{"\n"}Kelas     : {data.layanan}</Text>
-                <Text style={{marginBottom:13}}>Tanggal : {data.tanggal}{"\n"}Jam       : {data.jam} {"\n"}</Text>
-                
+                <Text style={{marginBottom:13}}>Tanggal : {data.tanggal}{"\n"}Jam       : {data.jam}{"\n\n"}Status      : {data.status}</Text>
+                <View
+                style={{
+                    borderBottomColor: 'black',
+                    borderBottomWidth: 1,
+                    marginTop: '4%'
+                }}/>
+                <Text style={{marginTop:'7%'}}>Total Harga (Dewasa x1)  :{"\n"}</Text>
+                <Text style={{marginLeft:'67%', fontWeight:'bold'}}>{data.harga}{"\n"}</Text>
+            
                 <Pressable 
                     style={styles.button}
-                    onPress={() => navigation.navigate('Pembatalan', { data: data })}
+                    onPress={() => navigation.navigate('PesananSayaDetail', { data: data })}
                 >
                     <Text style={{color: '#fff'}}> Details </Text>
                 </Pressable>
@@ -38,7 +46,14 @@ const PesananSayaLand = ({route, navigation}) =>{
     }
     else{
         return(
-            <Text>Pesanan saya gengss</Text>
+            <View style={styles.container2}>
+            <View>
+                <Text style={styles.title}>
+                    Kapalzy
+                 </Text>
+            </View>
+                <Text>TIDAK ADA DATA PEMESANAN</Text>
+            </View>
         )
     }
 }
@@ -46,11 +61,10 @@ const PesananSayaLand = ({route, navigation}) =>{
 const styles = StyleSheet.create({
     title:{
         textAlign: 'center',
-        fontSize: 23,
+        fontSize: 37,
         fontWeight: 'bold',
         color: '#00579C',
-        marginTop: '8%',
-        margin: '11%'
+        marginBottom: 7
     },
     container:{
         backgroundColor: '#fff',
@@ -62,6 +76,20 @@ const styles = StyleSheet.create({
         elevation: 5,
         marginTop: '20%',
         marginBottom: '10%'
+    },
+    container2:{
+        backgroundColor: '#fff',
+        borderRadius: 5,
+        padding: 10,
+        width: '90%',
+        left: '5%',
+        shadowColor: '#000',
+        elevation: 5,
+        marginTop: '20%',
+        marginBottom: '10%',
+        flex: 1, 
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     box:{
         backgroundColor: '#F0F0F0',
@@ -104,9 +132,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#ed7c31',
+        backgroundColor: '#00579C',
         borderRadius: 20,
-        marginTop: 10,
+        marginTop: 13,
         marginBottom: '3%',
         marginRight: '5%',
         height: '13%'

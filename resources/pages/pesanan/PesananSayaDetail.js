@@ -25,21 +25,19 @@ const PesananSayaDetail = ({route, navigation}) =>{
                 <Text style={styles.text2}>Ke    : {data.tujuan}</Text>
                 <Text >{"\n"}Kelas     : {data.layanan}</Text>
                 <Text style={{marginBottom:13}}>Tanggal : {data.tanggal}{"\n"}Jam       : {data.jam} {"\n"}</Text>
-                <View style={styles.wrapper}>
+                
+                <Text >Nama       : {data.nama}</Text>
+                <Text style={{marginBottom:13}}>Identitas  : {data.identitas}{"\n"}Umur        : {data.umur} {"\n"}</Text>
+                
+                <Text style={styles.text2}>Harga      : {data.harga}</Text>
+                <Text style={{marginBottom:'12%'}}>Status       : {data.status}</Text>
+                
                 <Pressable 
-                    style={styles.leftButton}
+                    style={styles.button}
                     onPress={() => navigation.navigate('Pembatalan', { data: data })}
                 >
                     <Text > Cancel </Text>
                 </Pressable>
-
-                <Pressable 
-                    style={styles.rightButton}
-                    onPress={() => navigation.navigate('Pembatalan', { data: data })}
-                >
-                    <Text style={{color: '#fff'}}> Details </Text>
-                </Pressable>
-                </View>
             </View>
             </View>
           )
@@ -70,6 +68,23 @@ const styles = StyleSheet.create({
         elevation: 5,
         marginTop: '20%',
         marginBottom: '10%'
+    },
+    button:{
+        flex: 0,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'pink',
+        borderColor: '#00579C',
+        borderRadius: 20,
+        height: '12%',
+        marginBottom: 10,
+    },
+    textButton:{
+        fontWeight: 'bold',
+        fontSize: 20,
+        padding: 10,
+        color: '#fff',
     },
     box:{
         backgroundColor: '#F0F0F0',

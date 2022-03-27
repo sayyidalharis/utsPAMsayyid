@@ -35,7 +35,7 @@ const InformasiPemesanan = ({route, navigation}) =>{
         <Text style={styles.text}>Rincian Pemesanan!! </Text>
         <View style={styles.box}>
             <Text>Dari : {data.awal} </Text>
-            <Text>Ke : {data.tujuan}{"\n"}Kelas : {data.layanan}</Text>
+            <Text>Ke : {data.tujuan}{"\n\n"}Kelas : {data.layanan}</Text>
             <Text>Tanggal : {data.tanggal}{"\n"}Jam : {data.jam}</Text>
             <StatusBar style="auto" />
         </View>

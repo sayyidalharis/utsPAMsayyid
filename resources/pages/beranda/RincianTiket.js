@@ -46,14 +46,31 @@ const RincianTiket = ({route, navigation}) =>{
                 <Text style={styles.text2}>Dari  : {data.awal}</Text>
                 <Text style={styles.text2}>Ke    : {data.tujuan}</Text>
                 <Text >{"\n"}Kelas     : {data.layanan}</Text>
-                <Text style={{marginBottom:13}}>Tanggal : {data.tanggal}{"\n"}Jam       : {data.jam}</Text>
+                <Text style={{marginBottom:13}}>Tanggal : {data.tanggal}{"\n\n"}Jam       : {data.jam}</Text>
+                <View
+                style={{
+                    borderBottomColor: 'black',
+                    borderBottomWidth: 1,
+                    marginTop: '4%'
+                }}/>
+                <Text style={{marginTop:'7%'}}>Total Harga (Dewasa x1)  :{"\n"}</Text>
+                <Text style={{marginLeft:'67%', fontWeight:'bold'}}>{data.harga}{"\n"}</Text>
             </View>
-            <Pressable 
-                    style={styles.button}
+            <View style={styles.wrapper}>
+                <Pressable 
+                    style={styles.leftButton}
+                    onPress={() => navigation.goBack()}
+                >
+                    <Text > Kembali </Text>
+                </Pressable>
+
+                <Pressable 
+                    style={styles.rightButton}
                     onPress={() => navigation.navigate('InformasiPemesanan', { data: data })}
                 >
-                <Text style={styles.textButton}>adasdas</Text>
-            </Pressable>
+                    <Text style={{color: '#fff'}}> Lanjutkan </Text>
+                </Pressable>
+            </View>
         </ScrollView>
         </View>
       )
@@ -123,6 +140,35 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         marginTop: 10,
         marginBottom: 10,
+    },
+    leftButton:{
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'white',
+        borderColor: '#00579C',
+        borderWidth: 1,
+        width: '35%',
+        borderRadius: 9,
+        padding: 12,
+        marginRight: '8%',
+    },
+    rightButton:{ 
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#00579C',
+        borderColor: '#00579C',
+        borderWidth: 1,
+        width: '35%',
+        borderRadius: 9,
+        padding: 10,
+        marginLeft: '8%',
+    },
+    wrapper:{
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginBottom: '10%' 
     },
     textButton:{
         fontWeight: 'bold',

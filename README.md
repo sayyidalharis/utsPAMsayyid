@@ -45,6 +45,7 @@ Landing Screen (Tab Beranda):
 Tab Pesanan :
     
 <img src="https://github.com/sayyidalharis/utsPAMsayyid/blob/master/screenshots/8. Daftar atau Informasi Pemesanan.jpeg" height=1000>
+<img src="https://github.com/sayyidalharis/utsPAMsayyid/blob/master/screenshots/9. Pemesanan Details.jpeg" height=1000>
     
 Tab Pembatalan :
     
@@ -52,5 +53,5 @@ Tab Pembatalan :
     
 Tab Lainnya :
     
-<img src="https://github.com/sayyidalharis/utsPAMsayyid/blob/master/screenshots/4. Lainnya, Identitas" height=1000>
+<img src="https://github.com/sayyidalharis/utsPAMsayyid/blob/master/screenshots/4. Lainnya, Identitas.jpeg" height=1000>
  

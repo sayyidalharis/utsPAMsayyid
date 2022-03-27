@@ -38,15 +38,19 @@ To start the app:
 
 <b> Screenshots <b>
     
-Landing Screen :
+Landing Screen (Tab Beranda):
     
-<img src="https://github.com/sayyidalharis/pamtask3sayyid/blob/master/screenshots/homePage.jpeg" height=1000>
+<img src="https://github.com/sayyidalharis/pamtask3sayyid/blob/master/screenshots/1. Home Screen.jpeg" height=1000>
     
-Success Query :
+Tab Pesanan :
     
-<img src="https://github.com/sayyidalharis/pamtask3sayyid/blob/master/screenshots/resultPageFound.jpeg" height=1000>
+<img src="https://github.com/sayyidalharis/pamtask3sayyid/blob/master/screenshots/8. Daftar atau Informasi Pemesanan.jpeg" height=1000>
     
-No Result Query :
+Tab Pembatalan :
     
-<img src="https://github.com/sayyidalharis/pamtask3sayyid/blob/master/screenshots/resultPageNotFound.jpeg" height=1000>
+<img src="https://github.com/sayyidalharis/pamtask3sayyid/blob/master/screenshots/10. Pembatalan pada Pemesanan.jpeg" height=1000>
+    
+Tab Lainnya :
+    
+<img src="https://github.com/sayyidalharis/pamtask3sayyid/blob/master/screenshots/4. Lainnya, Identitas" height=1000>
  

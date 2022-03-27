@@ -83,7 +83,7 @@ const InformasiPemesanan = ({route, navigation}) =>{
                 style={styles.button}
                 onPress={() => navigation.navigate('TampilanPemesanan', { data: data })}
             >
-                <Text style={styles.textButton}>adasdas</Text>
+                <Text style={styles.textButton}> Submit </Text>
             </Pressable> 
         </ScrollView>
         </View>

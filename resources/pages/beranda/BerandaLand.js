@@ -2,6 +2,8 @@ import React, { useState }   from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text, ScrollView, Picker, Pressable} from 'react-native'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Fontisto from 'react-native-vector-icons/Fontisto';
+import Entypo from 'react-native-vector-icons/Entypo';
 
 
 const BerandaLand = ({navigation}) =>{
@@ -25,7 +27,7 @@ const BerandaLand = ({navigation}) =>{
             <View style={styles.label}>
                 <Text>Pelabuhan Awal</Text>
                 <View style={styles.field}>
-                    <FontAwesome style={styles.icon} name="ship" size={30} />
+                    <Fontisto style={styles.icon} name="ship" size={28} />
                     <Picker
                         selectedValue={text}
                         style={{ height: '73%', width: '90%' }}
@@ -43,7 +45,7 @@ const BerandaLand = ({navigation}) =>{
 
                 <Text>Pelabuhan Tujuan</Text>
                 <View style={styles.field}>
-                    <FontAwesome style={styles.icon} name="ship" size={30} />
+                    <FontAwesome style={styles.icon} name="ship" size={28} />
                     <Picker
                         selectedValue={text}
                         style={{ height: '73%', width: '90%' }}
@@ -61,7 +63,7 @@ const BerandaLand = ({navigation}) =>{
 
                 <Text>Kelas Layanan</Text>
                 <View style={styles.field}>
-                    <FontAwesome style={styles.icon} name="ship" size={30} />
+                    <Entypo style={styles.icon} name="drink" size={28} />
                     <Picker
                         selectedValue={text}
                         style={{ height: '73%', width: '90%' }}
@@ -76,7 +78,7 @@ const BerandaLand = ({navigation}) =>{
                 
                 <Text>Tanggal Masuk Pelabuhan</Text>
                 <View style={styles.field}>
-                    <FontAwesome style={styles.icon} name="ship" size={30} />
+                    <Fontisto style={styles.icon} name="date" size={28} />
                     <Picker
                         selectedValue={text}
                         style={{ height: '73%', width: '90%' }}
@@ -90,7 +92,7 @@ const BerandaLand = ({navigation}) =>{
 
                 <Text>Jam Masuk Pelabuhan</Text>
                 <View style={styles.field}>
-                    <FontAwesome style={styles.icon} name="ship" size={30} />
+                    <FontAwesome style={styles.icon} name="clock-o" size={28} />
                     <Picker
                         selectedValue={text}
                         style={{ height: '73%', width: '90%' }}
@@ -112,7 +114,8 @@ const BerandaLand = ({navigation}) =>{
                     style={styles.button}
                     onPress={() => navigation.navigate('RincianTiket', { data: text })}
                 >
-                    <Text style={styles.textButton}>adasdas</Text>
+                <Fontisto style={styles.icon} name="search" size={22} />
+                    <Text style={styles.textButton}>Cari Tiket</Text>
                 </Pressable>
             </View>
         </ScrollView>

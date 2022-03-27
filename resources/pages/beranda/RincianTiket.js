@@ -2,12 +2,34 @@ import React from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text, ScrollView, Picker, Pressable} from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { Jadwals } from './data.js'
 // import DataQuery from './DataQuery'
 
 const RincianTiket = ({route, navigation}) =>{
+
     const { data } = route.params;
     console.log(data)
+
+    if(data.awal == data.tujuan){
+        return(
+            <View style={styles.container2}>
+            <View>
+                <Text style={styles.title}>
+                    Kapalzy
+                 </Text>
+            </View>
+                <Text style={{marginBottom:'20%'}}>TIDAK ADA DATA PELAYARAN</Text>
+            <Ionicons
+                style={styles.menuIcon}
+                name="arrow-back"
+                color={'#00579C'}
+                onPress={() => navigation.goBack()}
+            />
+            </View>
+        )
+    }
+    else{
 
     const listJadwal = () => {
 
@@ -74,6 +96,7 @@ const RincianTiket = ({route, navigation}) =>{
         </ScrollView>
         </View>
       )
+    }
 }
 const styles = StyleSheet.create({
     title:{
@@ -93,6 +116,20 @@ const styles = StyleSheet.create({
         elevation: 5,
         marginTop: '20%',
         marginBottom: '10%'
+    },
+    container2:{
+        backgroundColor: '#fff',
+        borderRadius: 5,
+        padding: 10,
+        width: '90%',
+        left: '5%',
+        shadowColor: '#000',
+        elevation: 5,
+        marginTop: '20%',
+        marginBottom: '10%',
+        flex: 1, 
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     box:{
         backgroundColor: '#F0F0F0',

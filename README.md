@@ -40,17 +40,17 @@ To start the app:
     
 Landing Screen (Tab Beranda):
     
-<img src="https://github.com/sayyidalharis/pamtask3sayyid/blob/master/screenshots/1. Home Screen.jpeg" height=1000>
+<img src="https://github.com/sayyidalharis/utsPAMsayyid/blob/master/screenshots/1. Home Screen.jpeg" height=1000>
     
 Tab Pesanan :
     
-<img src="https://github.com/sayyidalharis/pamtask3sayyid/blob/master/screenshots/8. Daftar atau Informasi Pemesanan.jpeg" height=1000>
+<img src="https://github.com/sayyidalharis/utsPAMsayyid/blob/master/screenshots/8. Daftar atau Informasi Pemesanan.jpeg" height=1000>
     
 Tab Pembatalan :
     
-<img src="https://github.com/sayyidalharis/pamtask3sayyid/blob/master/screenshots/10. Pembatalan pada Pemesanan.jpeg" height=1000>
+<img src="https://github.com/sayyidalharis/utsPAMsayyid/blob/master/screenshots/10. Pembatalan pada Pemesanan.jpeg" height=1000>
     
 Tab Lainnya :
     
-<img src="https://github.com/sayyidalharis/pamtask3sayyid/blob/master/screenshots/4. Lainnya, Identitas" height=1000>
+<img src="https://github.com/sayyidalharis/utsPAMsayyid/blob/master/screenshots/4. Lainnya, Identitas" height=1000>
  

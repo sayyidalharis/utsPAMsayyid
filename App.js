@@ -1,16 +1,11 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { View, Text, TouchableOpacity } from 'react-native';
-import HomePage from './resources/pages/HomePage'
-import ResultPage from './resources/pages/ResultPage'
-import HomePageD from './resources/pages/HomePageD'
 import Beranda from './resources/pages/Beranda'
 import PesananSaya from './resources/pages/PesananSaya'
 import Pembatalan from './resources/pages/Pembatalan'
 import Lainnya from './resources/pages/Lainnya'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 const Tab = createBottomTabNavigator();

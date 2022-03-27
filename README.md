@@ -1,7 +1,7 @@
 # utsPAMsayyid
 
-<b>Tugas Individu </b>
-<b> 3 Pengembangan Aplikasi Mobile</b>
+<b> UJIAN TENGAH SEMESTER </b>
+<b> Pengembangan Aplikasi Mobile</b>
 
 <b>Identitas Mahasiswa</b>
 
@@ -10,19 +10,28 @@
     Kelas   : Pengembangan Aplikasi Mobile - RD
 
 Extra dependencies:
- - <a href="https://reactnavigation.org/docs/getting-started"><b>React Navigation</b></a>
- - <a href="https://reactnavigation.org/docs/hello-react-navigation"><b>Native Stack Navigator</b></a>
- - <a href="https://github.com/oblador/react-native-vector-icons"><b>react-native-vector-icons</b></a>
+  "dependencies": {
+    "@react-navigation/bottom-tabs": "^6.2.0",
+    "@react-navigation/native": "^6.0.8",
+    "@react-navigation/native-stack": "^6.5.0",
+    "expo": "~44.0.0",
+    "expo-status-bar": "~1.2.0",
+    "expo-updates": "~0.11.6",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-native": "0.64.3",
+    "react-native-safe-area-context": "3.3.2",
+    "react-native-screens": "~3.10.1",
+    "react-native-vector-icons": "^9.1.0",
+    "react-native-web": "0.17.1"
+  },
+  
+To download dependencies:
+
+    npm install
+
 
 To start the app:
-
-    npm run start
-
-or
-
-    npm start
-
-or
 
     expo start
 
